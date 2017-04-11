@@ -1,0 +1,7 @@
+#!/bin/sh
+#
+# Run cukinia
+#
+
+[ "$1" == "start" ] || exit 0
+/usr/bin/cukinia

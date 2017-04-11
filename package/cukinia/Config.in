@@ -1,0 +1,12 @@
+config BR2_PACKAGE_CUKINIA
+	bool "cukinia"
+	help
+	  Cukinia is designed to help Linux-based embedded firmware
+	  developers run simple validation tests on their firmware.
+
+	  https://github.com/savoirfairelinux/cukinia
+
+config BR2_PACKAGE_CUKINIA_BOOT
+	bool "run at boot time"
+	depends on BR2_PACKAGE_CUKINIA && (BR2_INIT_SYSV || BR2_INIT_BUSYBOX)
+
