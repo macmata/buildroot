@@ -1,0 +1,10 @@
+[project]
+org='sperryrail'
+name='buildroot'
+
+[build]
+distro=ubuntu
+command='make altera_sockit_defconfig && make source && make'
+
+files='output/images/rootfs.ext3'
+archive='%Po-%Pn_%D3-%Gh.tar.xz'
