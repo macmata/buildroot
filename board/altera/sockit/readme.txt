@@ -67,6 +67,7 @@ After building, you should obtain this tree:
     ├── socfpga.dtb
     ├── u-boot.img
     ├── u-boot-spl.bin
+    ├── uboot-part.img
     └── uImage
 
 
@@ -81,7 +82,7 @@ https://github.com/maximeh/mkpimage
 
 Remember that without signing the u-boot-spl.bin, the board will not boot !!!
 
-  $ mkpimage u-boot-spl.bin -o u-boot-spl-signed.bin
+The u-boot binary is signed by post-image.sh script and output the file uboot-part.img
 
 Prepare your SDcard
 ===================
@@ -127,12 +128,9 @@ Remember your binaries are located in output/images/, go inside that directory :
 
   $ cd output/images
 
-The partition with type a2 is the partition scan by the first bootloader stage
-in the SoCkit ROM to find the next bootloader stage so we must write the signed
-preloader and the u-boot binaries in that partition :
+Copy the signed uboot-part.img image on partition 3:
 
-  $ sudo dd if=u-boot-spl-signed.bin of=/dev/mmcblk0p3 bs=64k seek=0
-  $ sudo dd if=u-boot.img of=/dev/mmcblk0p3 bs=64k seek=4
+  $ sudo dd if=uboot-part.img of=/dev/mmcblk0p3 bs=64k
 
 Copy the Linux kernel and its Device tree :
 
