@@ -1,5 +1,5 @@
 config BR2_PACKAGE_HOST_MKPIMAGE
-	bool "mkpimage"
+	bool "host mkpimage"
 	help
 	  Generate signature for altera spl
 	  Source from  https://git.pengutronix.de/cgit/barebox/tree/scripts/socfpga_mkimage.c?id=55d29525146dcd280987dfd565bfd34f08858fb3
