@@ -7,6 +7,7 @@
 CUKINIA_VERSION = 1e43172408e57140a5b5d84e8572a8eede1b8471
 CUKINIA_SITE = $(call github,savoirfairelinux,cukinia,$(CUKINIA_VERSION))
 CUKINIA_LICENSE = Apache-2.0 or GPLv3
+CUKINIA_PKGDIR = $(TOPDIR)/package/cukinia
 
 define CUKINIA_INSTALL_TARGET_CMDS
 	$(INSTALL) -D -m 0755 $(@D)/cukinia \
